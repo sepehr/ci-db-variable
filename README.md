@@ -2,15 +2,12 @@
 Dead simple Drupal-like database variable API for CodeIgniter.
 
 ## Dependencies
-* (CodeIgniter Base Model)[https://github.com/sepehr/ci-mongodb-base-model]
+* [CodeIgniter Base Model](https://github.com/sepehr/ci-mongodb-base-model)
 
 ## Installation
 Move each file to its corresponding directory in CodeIgniter `application/` and you're simply done. In case of using modular
-version of CodeIgniter, make sure to update model paths in `helpers/variable_helper.php`. You might want to
-
-## TODOs
-* Library
-* API reference
+version of CodeIgniter, make sure to update model paths in `helpers/variable_helper.php`. You might want to autoload the the model
+and its helper in `config/autoload.php` file.
 
 ## Usage
 ```php
@@ -36,3 +33,7 @@ version of CodeIgniter, make sure to update model paths in `helpers/variable_hel
 
 	}
 ```
+
+## TODOs
+* Library
+* API reference

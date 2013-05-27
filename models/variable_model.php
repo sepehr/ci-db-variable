@@ -54,7 +54,7 @@ class Variable_model extends Base_Model {
 	 * This also ensure setting default values for missing fields
 	 * in a document.
 	 */
-	protected $_fields = array('key', 'value');
+	protected $_fields = array('key' => 'required', 'value' => '');
 
 	// ------------------------------------------------------------------------
 	// API Functions
@@ -74,12 +74,7 @@ class Variable_model extends Base_Model {
 		// Update
 		if ($current = $this->get_by('key', $key))
 		{
-			if ($overwrite)
-			{
-				return $this->update($current->_id, array('value' => $value));
-			}
-
-			return -1;
+			return $overwrite ? $this->update($current->_id, array('value' => $value)) : -1;
 		}
 
 		// New document
@@ -98,7 +93,7 @@ class Variable_model extends Base_Model {
 	 */
 	public function variable_get($key, $default = NULL)
 	{
-		if ($document = $this->get_by('key', $key))
+		if ($document = $this->get_by('key', $key) AND ! empty($document->value))
 		{
 			return $document->value;
 		}
@@ -111,7 +106,7 @@ class Variable_model extends Base_Model {
 	/**
 	 * Deletes a key-value document by key.
 	 *
-	 * @param  string $key     Document key.
+	 * @param  string $key Document key.
 	 *
 	 * @return bool
 	 */
@@ -126,4 +121,4 @@ class Variable_model extends Base_Model {
 // End of Variable_model class
 
 /* End of file variable_model.php */
-/* Location: ./application/modules/system/models/variable_model.php */
+/* Location: ./application/models/variable_model.php */

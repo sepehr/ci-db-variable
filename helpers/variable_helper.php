@@ -131,4 +131,4 @@ if ( ! function_exists('vdel'))
 // ------------------------------------------------------------------------
 
 /* End of file variable_helper.php */
-/* Location: ./application/modules/system/helpers/variable_helper.php */
+/* Location: ./application/helpers/variable_helper.php */
